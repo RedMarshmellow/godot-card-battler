@@ -1,0 +1,8 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Project context (design notes, not source)
+AGENTS.md
+Project Context.txt
+Project Context.txt.bak

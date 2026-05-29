@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardResource" format=3 uid="uid://cx0jdoishoyud"]
+
+[ext_resource type="Script" uid="uid://cl25s6a1yv720" path="res://scripts/card_resource.gd" id="1_c3lul"]
+[ext_resource type="Texture2D" uid="uid://ds1vxtgq0boak" path="res://resources/art/strike.svg" id="1_fkwoo"]
+
+[resource]
+script = ExtResource("1_c3lul")
+card_name = "Strike"
+cost = 1
+damage = 6
+description = "Deal 6 damage."
+icon = ExtResource("1_fkwoo")
+metadata/_custom_type_script = "uid://cl25s6a1yv720"

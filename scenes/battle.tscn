@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://dq53qxkne67hc"]
+
+[ext_resource type="Script" uid="uid://ftneqqvp06e8" path="res://scripts/battle_manager.gd" id="1_dn72j"]
+[ext_resource type="PackedScene" uid="uid://c8te86ckj5y4j" path="res://scenes/enemy.tscn" id="2_th188"]
+[ext_resource type="Texture2D" uid="uid://c6qpebfkcpr3k" path="res://resources/art/energy.svg" id="3_h7ydb"]
+[ext_resource type="Texture2D" uid="uid://b4khpf4ao4w37" path="res://resources/art/health.svg" id="4_5ly23"]
+[ext_resource type="Texture2D" uid="uid://c46ul4ir24xkf" path="res://resources/art/mushroom forest full.png" id="5_bl3mg"]
+
+[node name="Battle" type="Control" unique_id=1494998678]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dn72j")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_bl3mg")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="Enemy" parent="." unique_id=1414619473 instance=ExtResource("2_th188")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -100.0
+offset_right = 100.0
+offset_bottom = 300.0
+grow_vertical = 1
+
+[node name="EnergyIcon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 0.0
+offset_top = 18.0
+offset_right = 42.0
+offset_bottom = 60.0
+texture = ExtResource("3_h7ydb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Energy" type="Label" parent="." unique_id=719487092]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 50.0
+offset_top = 20.0
+theme_override_font_sizes/font_size = 24
+text = "Energy: 3 / 3"
+
+[node name="HealthIcon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -210.0
+offset_top = 18.0
+offset_right = -168.0
+offset_bottom = 60.0
+grow_horizontal = 0
+texture = ExtResource("4_5ly23")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Health" type="Label" parent="." unique_id=1910951478]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -160.0
+offset_top = 20.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "Health: 80 / 80"
+
+[node name="PlayerStrength" type="Label" parent="." unique_id=2071802421]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 60.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "Strength"
+
+[node name="PlayerVulnerable" type="Label" parent="." unique_id=1040822975]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 100.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "Vulnerable"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=388994313]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=734488247]
+layout_mode = 2
+
+[node name="Block" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1345426327]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Block: 0"
+
+[node name="EndTurn" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=479268802]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 20
+text = "End Turn"
+
+[node name="Hand" type="HBoxContainer" parent="VBoxContainer" unique_id=1027195169]
+layout_mode = 2
+size_flags_vertical = 10
+alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/EndTurn" to="." method="end_player_turn"]

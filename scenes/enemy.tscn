@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://c8te86ckj5y4j"]
+
+[ext_resource type="Script" uid="uid://bowob0kxn7xy5" path="res://scripts/enemy.gd" id="1_7p1mj"]
+[ext_resource type="Texture2D" uid="uid://cf7ttt08w1csf" path="res://resources/art/monster.png" id="2_md0e3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_md0e3"]
+
+[node name="Enemy" type="PanelContainer" unique_id=1414619473]
+custom_minimum_size = Vector2(200, 300)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_md0e3")
+script = ExtResource("1_7p1mj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=236079927]
+layout_mode = 2
+
+[node name="Intent" type="Label" parent="VBoxContainer" unique_id=1571782]
+layout_mode = 2
+
+[node name="Sprite" type="TextureRect" parent="VBoxContainer" unique_id=1161538673]
+layout_mode = 2
+texture = ExtResource("2_md0e3")
+stretch_mode = 6
+
+[node name="Name" type="Label" parent="VBoxContainer" unique_id=1241020342]
+layout_mode = 2
+
+[node name="HP" type="Label" parent="VBoxContainer" unique_id=1970753839]
+layout_mode = 2
+
+[node name="Strength" type="Label" parent="VBoxContainer" unique_id=1624570437]
+layout_mode = 2
+
+[node name="Vulnerable" type="Label" parent="VBoxContainer" unique_id=1132622558]
+layout_mode = 2

@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://r12i08jjlhhv"]
+
+[ext_resource type="Script" uid="uid://c77g24j04bo8k" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://dykt634v8bewd" path="res://resources/art/Background.png" id="2_7kgtq"]
+
+[node name="MainMenu" type="Control" unique_id=1867478331]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l6cm7")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7kgtq")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="Title" type="Label" parent="." unique_id=1972333804]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.5
+offset_top = -22.5
+offset_right = 137.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Not Slay the Spire"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="." unique_id=550594913]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -35.0
+offset_right = 50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Play"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

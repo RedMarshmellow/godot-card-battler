@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardResource" format=3 uid="uid://bymfjvbc4vqew"]
+
+[ext_resource type="Texture2D" uid="uid://dde8r4ch2u72c" path="res://resources/art/defend.svg" id="1_aihp5"]
+[ext_resource type="Script" uid="uid://cl25s6a1yv720" path="res://scripts/card_resource.gd" id="1_w0lcw"]
+
+[resource]
+script = ExtResource("1_w0lcw")
+card_name = "Defend"
+cost = 1
+type = 1
+block = 5
+description = "Gain 5 block."
+icon = ExtResource("1_aihp5")
+metadata/_custom_type_script = "uid://cl25s6a1yv720"

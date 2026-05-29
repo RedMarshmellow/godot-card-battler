@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cliu6o1ynb3ll"]
+
+[ext_resource type="Script" uid="uid://ow8dh1b8mha1" path="res://scripts/card.gd" id="1_ktuci"]
+[ext_resource type="Texture2D" uid="uid://cjipmiojc783r" path="res://resources/art/icon.svg" id="3_sy11y"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_card"]
+bg_color = Color(0.85, 0.65, 0.13, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[node name="Card" type="PanelContainer" unique_id=1321672125]
+custom_minimum_size = Vector2(70, 150)
+offset_right = 128.0
+offset_bottom = 208.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_card")
+script = ExtResource("1_ktuci")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=70476493]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer" unique_id=1703275446]
+layout_mode = 2
+texture = ExtResource("3_sy11y")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Cost" type="Label" parent="VBoxContainer" unique_id=1441724035]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+
+[node name="CardName" type="Label" parent="VBoxContainer" unique_id=639709542]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="VBoxContainer" unique_id=300914232]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
